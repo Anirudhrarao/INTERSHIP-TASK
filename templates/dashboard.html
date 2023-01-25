@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <div class="container">
+        <div class="dashboard-body">
+            {% if user.is_authenticated %}
+            {% if request.user.is_doctor %}
+                <div class="patient-doctor">
+                    <h2>Welcome Dr {{request.user.username}}👨‍⚕️</h2>
+                    <img class="user-img" src="/media/{{request.user.profile}}" alt="">
+                </div> 
+                {% else %}
+                <div class="patient-doctor">
+                    <h2>Get well soon dear {{request.user.username}}😊</h2>
+                    <img class="user-img" src="/media/{{request.user.profile}}" alt="">
+                </div> 
+                {% endif %}
+                <table>
+                    <tr>
+                        <th>Firstname:</th>
+                        <td>{{request.user.first_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>lastname:</th>
+                        <td>{{request.user.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Username:</th>
+                        <td>{{request.user.username}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{request.user.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td>
+                            {{request.user.line1}}
+                            {{request.user.city}}
+                            {{request.user.state}}
+                            {{request.user.pincode}}
+                        </td>
+                    </tr>
+                </table>
+                
+                {% else %}
+                    <h2>No user Logged in</h2>
+                {% endif %}
+        </div>
+    </div>
+{% endblock %}

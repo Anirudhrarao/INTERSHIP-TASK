@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+    <main class="form-body login">
+        {% if form.errors %}
+            {{ form.errors}}
+        {% endif %}
+        <form action="" method='post'>
+            {% csrf_token %}
+            <p>
+                <label for="username">Username:</label>
+                {{form.username}}
+            </p>
+            <p>
+                <label for="password">password:</label>
+                {{form.password}}
+            </p>
+            <p class="btn-login">
+                <input type="submit" value="Login">
+            </p>
+        </form>
+    </main>
+</div>
+{% endblock %}

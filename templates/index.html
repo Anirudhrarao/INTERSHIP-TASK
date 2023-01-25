@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "style/style.css" %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'home' %}">Signup</a></li>
+            <li><a href="{% url 'login' %}">Signin</a></li>
+            <li><a href="{% url 'signout' %}">Signout</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    <div class="container">
+        <main class="form-body">
+            {% comment %} <header>
+                <h1>Signup Form</h1>
+            </header> {% endcomment %}
+            {% if form.errors %}
+            {{ form.errors}}
+            {% endif %}
+            <form action="" method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>
+                    <label for="firstname">Firstname:</label>
+                    {{form.first_name}}
+                </p>
+                <p>
+                    <label for="lastname">Lastname:</label>
+                    {{form.last_name}}
+                </p>
+                <p>
+                    <label for="profile">Profile Picture:</label>
+                    {{form.profile}}
+                </p>
+                <p>
+                    <label for="username">Username:</label>
+                    {{form.username}}
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    {{form.email}}
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    {{form.password}}
+                </p>
+                <p>
+                    <label for="password2">Confirm Password:</label>
+                    {{form.password2}}
+                </p>
+  
+                <p>
+                    <label for="line1">Line1:</label>
+                    {{form.line1}}
+                </p>
+                <p>
+                    <label for="city">City:</label>
+                    {{form.city}}
+                </p>
+                <p>
+                    <label for="state">State:</label>
+                    {{form.state}}
+                </p>
+                <p>
+                    <label for="pincode">Pincode:</label>
+                    {{form.pincode}}
+                </p>
+                <p class="flex">
+                    <label for="doctor">Doctor:</label>
+                    {{form.is_doctor}}
+                    <label for="patient">Patient:</label>
+                    {{form.is_patient}}
+                </p>
+                <p>
+                    <input type="submit" value="Signup">
+                </p>
+            </form>
+        </main>
+    </div>
+    {% endblock %}
+</body>
+</html>

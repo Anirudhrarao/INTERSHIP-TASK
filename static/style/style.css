@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 200vh;
+}
+.container {
+    width: 100%;
+    padding: 10px;
+    
+}
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-body {
+    border: 2px solid;
+    width: 600px;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    padding: 20px 40px;
+    margin: 0 auto;
+    top: 40px;
+}
+p label {
+    display: block;
+}
+p input {
+    width: 100%;
+    padding: 10px;
+}
+.flex {
+    display: flex;
+    margin: 10px 0;
+}
+p input[type="submit"] {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+p input[type="submit"]:hover{
+    background-color: palegreen;
+}
+
+nav {
+    background-color: gainsboro;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 12px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: gray;
+}
+
+table,th,td {
+    border: 2px groove black;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+table {
+    width: 800px;
+    position: relative;
+    top: 40px;
+    margin: 0 auto;
+}
+
+.patient-doctor {
+    width: 300px;
+    height: 200px;
+    background-color: grey;
+    color: palegreen;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px 0 0 0;
+    text-transform: uppercase;
+    border-radius: 20px ;
+}
+
+.user-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.login {
+    margin-top: 30px;
+}
+
+.btn-login {
+    margin-top: 10px;
+}
